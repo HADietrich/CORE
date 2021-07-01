@@ -1,0 +1,57 @@
+Input Files
+    -POM24 PRL OPOM FLAT FILE
+        XLSX file that houses several fields from the OPOM extract
+
+
+PYTHON FILES
+    -POMFlatFileMutator.py
+        Script that creates objects to utilize data from the POM Flat File
+        Outputs Costlines.xlsx, LaborProfiles.xlsx, and Tasks.xlsx
+    -Constants.py
+        Holds several constants utilized in the below files
+    -TaskCreator.py
+        Holds two classes, Task and Tasks. Each line from the pom flat file is fed to the Task class and creates a Task
+        object, it is added to Tasks if it is unique for later processing. Tasks houses all of the task objects and
+        creates the dataframe for output
+    -LaborProfilesCreator.Py
+        Holds two classes LaborProfile and LaborProfiles, if it is a unique combination of inputs creates a labor profile
+        added to the LaborProfiles object for later processing, LaborProfiles reates the dataframe and houses all of the
+        laborprofiles
+    -CostLineCreator.Py
+        Operates like the above two just for CostLines. Creates the costline for ultimate use by the CORE Tool
+    -Core.py
+        Used for POMTool 1.0 which is OBE
+
+OutputFiles
+    -Tasks.xlsx
+        Houses all the tasks created
+    -LaborProfiles.xlsx
+        Houses all of the profiles created
+    -CostLines.xlsx
+        Houses all of the costlines created
+
+
+Remaining tasks:
+    -Remaining Python Tasks:
+        -Point year to correct column in POMFLatFile, Column Z houses the correct data just need to update the classes
+        -Create logic for splitting each of the tasks, laborprofiles, costlines by unique funding profile and putting
+            them into the tool for distribution
+        -Create logic for receiving all of the disparate files from users into a single file that houses all of the
+            updated values
+    -Remaining VBA Tasks:
+        -Create logic for updating labor profiles and tasks, need to affect the costlines tab once a change is made to
+        either labor profiles or tasks.
+        -Double check the logic for the save tasks and save profiles
+        -Remove box for or implement filtering criteria for the task search panels
+        -Finish manage cost form including the backend logic to update the costlines tab
+
+    This is not necessarily a complete list, just what I can remember.
+
+Basic Functionality
+    -POMFlatFileMutator opens the POMFLatFile and creates the tasks, laborprofiles and costlines. Creates the dataframes
+        then creates the excel files with the associated data
+
+
+
+
+
